@@ -1,0 +1,23 @@
+{
+  "_comment": [
+    "Measured silence, as [start, end] pairs in seconds. Optional: speech-cut infers",
+    "an approximation from word gaps when you leave this out.",
+    "",
+    "It is worth measuring, because word end times lie. Compare 'line.' in the",
+    "transcript (written as ending at 9.10) with the silence below starting at 4.00:",
+    "the speaker actually stopped at 4.0 and the recogniser stretched the word over",
+    "the pause. Only the measured map can see that.",
+    "",
+    "Any tool will do. With ffmpeg:",
+    "  ffmpeg -i clip.mp4 -af silencedetect=noise=-35dB:d=0.35 -f null -",
+    "then collect the silence_start / silence_end pairs it prints."
+  ],
+  "silences": [
+    [4.00, 9.30],
+    [10.10, 11.95],
+    [17.60, 18.15],
+    [21.90, 23.98],
+    [27.90, 30.95],
+    [34.90, 36.80]
+  ]
+}

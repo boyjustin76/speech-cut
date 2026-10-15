@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speech-cut"
+version = "0.1.0"
+description = "Cut video to what was actually said. Word-level timestamps in, edit decisions out — including the retakes volume-based cutters keep."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "JungChan LEE" }]
+keywords = [
+    "video-editing", "transcript", "whisper", "silence-removal",
+    "retake", "jump-cut", "speech", "subtitles", "premiere-pro", "automation",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Video :: Non-Linear Editor",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Source = "https://github.com/boyjustin76/speech-cut"
+Issues = "https://github.com/boyjustin76/speech-cut/issues"
+
+[project.scripts]
+speech-cut = "speech_cut.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

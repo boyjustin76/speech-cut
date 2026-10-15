@@ -1,0 +1,104 @@
+[
+ {
+  "_comment": "Whisper-style word timestamps. 40 seconds of a scripted talking-head take, with the four things this library is for: a long pause, a false start, a stammer, and a retake.",
+  "start": 0.0, "end": 9.1,
+  "text": " Today I want to show you how to read a trend from a single line.",
+  "words": [
+   {"word": " Today",  "start": 0.00, "end": 0.42, "probability": 0.99},
+   {"word": " I",      "start": 0.42, "end": 0.55, "probability": 0.99},
+   {"word": " want",   "start": 0.55, "end": 0.84, "probability": 0.98},
+   {"word": " to",     "start": 0.84, "end": 0.96, "probability": 0.99},
+   {"word": " show",   "start": 0.96, "end": 1.28, "probability": 0.99},
+   {"word": " you",    "start": 1.28, "end": 1.50, "probability": 0.99},
+   {"word": " how",    "start": 1.50, "end": 1.74, "probability": 0.98},
+   {"word": " to",     "start": 1.74, "end": 1.86, "probability": 0.99},
+   {"word": " read",   "start": 1.86, "end": 2.20, "probability": 0.99},
+   {"word": " a",      "start": 2.20, "end": 2.31, "probability": 0.97},
+   {"word": " trend",  "start": 2.31, "end": 2.78, "probability": 0.99},
+   {"word": " from",   "start": 2.78, "end": 3.02, "probability": 0.98},
+   {"word": " a",      "start": 3.02, "end": 3.12, "probability": 0.97},
+   {"word": " single", "start": 3.12, "end": 3.58, "probability": 0.99},
+   {"word": " line.",  "start": 3.58, "end": 9.10, "probability": 0.98}
+  ]
+ },
+ {
+  "_comment": "A false start: two low-confidence words, then nothing. This is the cough/um case.",
+  "start": 9.4, "end": 10.0, "text": " Uh so",
+  "words": [
+   {"word": " Uh", "start": 9.40, "end": 9.66, "probability": 0.21},
+   {"word": " so", "start": 9.66, "end": 10.00, "probability": 0.18}
+  ]
+ },
+ {
+  "_comment": "A stammer: 'the' twice, 0.2s apart, mid-sentence. This one is KEPT -- see 'What it does not do' in the README. Stammers are only removed when they land on a cut boundary, where they would otherwise be audible twice in a row.",
+  "start": 12.0, "end": 17.4,
+  "text": " The the indicator plots one dot per candle.",
+  "words": [
+   {"word": " The",       "start": 12.00, "end": 12.22, "probability": 0.62},
+   {"word": " the",       "start": 12.42, "end": 12.66, "probability": 0.97},
+   {"word": " indicator", "start": 12.66, "end": 13.30, "probability": 0.99},
+   {"word": " plots",     "start": 13.30, "end": 13.72, "probability": 0.98},
+   {"word": " one",       "start": 13.72, "end": 13.98, "probability": 0.99},
+   {"word": " dot",       "start": 13.98, "end": 14.32, "probability": 0.99},
+   {"word": " per",       "start": 14.32, "end": 14.58, "probability": 0.98},
+   {"word": " candle.",   "start": 14.58, "end": 17.40, "probability": 0.99}
+  ]
+ },
+ {
+  "_comment": "Retake, first attempt. Stops mid-word at 'ma-'. Note the word times run flush into the next segment even though there is a 1.1s pause -- that is the behaviour that defeats gap-based splitting.",
+  "start": 18.2, "end": 23.9,
+  "text": " Enter at the close of the candle where the dot turns ma",
+  "words": [
+   {"word": " Enter",  "start": 18.20, "end": 18.62, "probability": 0.98},
+   {"word": " at",     "start": 18.62, "end": 18.78, "probability": 0.97},
+   {"word": " the",    "start": 18.78, "end": 18.92, "probability": 0.98},
+   {"word": " close",  "start": 18.92, "end": 19.36, "probability": 0.99},
+   {"word": " of",     "start": 19.36, "end": 19.50, "probability": 0.98},
+   {"word": " the",    "start": 19.50, "end": 19.64, "probability": 0.98},
+   {"word": " candle", "start": 19.64, "end": 20.18, "probability": 0.99},
+   {"word": " where",  "start": 20.18, "end": 20.48, "probability": 0.98},
+   {"word": " the",    "start": 20.48, "end": 20.62, "probability": 0.98},
+   {"word": " dot",    "start": 20.62, "end": 20.94, "probability": 0.99},
+   {"word": " turns",  "start": 20.94, "end": 21.30, "probability": 0.98},
+   {"word": " ma",     "start": 21.30, "end": 23.90, "probability": 0.44}
+  ]
+ },
+ {
+  "_comment": "Retake, second attempt -- the keeper. Same line, said cleanly.",
+  "start": 24.0, "end": 29.6,
+  "text": " Enter at the close of the candle where the dot turns magenta.",
+  "words": [
+   {"word": " Enter",    "start": 24.00, "end": 24.40, "probability": 0.99},
+   {"word": " at",       "start": 24.40, "end": 24.56, "probability": 0.98},
+   {"word": " the",      "start": 24.56, "end": 24.70, "probability": 0.98},
+   {"word": " close",    "start": 24.70, "end": 25.12, "probability": 0.99},
+   {"word": " of",       "start": 25.12, "end": 25.26, "probability": 0.98},
+   {"word": " the",      "start": 25.26, "end": 25.40, "probability": 0.98},
+   {"word": " candle",   "start": 25.40, "end": 25.92, "probability": 0.99},
+   {"word": " where",    "start": 25.92, "end": 26.22, "probability": 0.98},
+   {"word": " the",      "start": 26.22, "end": 26.36, "probability": 0.98},
+   {"word": " dot",      "start": 26.36, "end": 26.68, "probability": 0.99},
+   {"word": " turns",    "start": 26.68, "end": 27.04, "probability": 0.98},
+   {"word": " magenta.", "start": 27.04, "end": 29.60, "probability": 0.99}
+  ]
+ },
+ {
+  "_comment": "A parallel clause: mostly the same words as the line above, but it is NOT a retake. This is the case the 0.80 threshold protects.",
+  "start": 31.0, "end": 36.8,
+  "text": " Exit at the close of the candle where the dot turns teal.",
+  "words": [
+   {"word": " Exit",   "start": 31.00, "end": 31.38, "probability": 0.98},
+   {"word": " at",     "start": 31.38, "end": 31.54, "probability": 0.98},
+   {"word": " the",    "start": 31.54, "end": 31.68, "probability": 0.98},
+   {"word": " close",  "start": 31.68, "end": 32.10, "probability": 0.99},
+   {"word": " of",     "start": 32.10, "end": 32.24, "probability": 0.98},
+   {"word": " the",    "start": 32.24, "end": 32.38, "probability": 0.98},
+   {"word": " candle", "start": 32.38, "end": 32.90, "probability": 0.99},
+   {"word": " where",  "start": 32.90, "end": 33.20, "probability": 0.98},
+   {"word": " the",    "start": 33.20, "end": 33.34, "probability": 0.98},
+   {"word": " dot",    "start": 33.34, "end": 33.66, "probability": 0.99},
+   {"word": " turns",  "start": 33.66, "end": 34.02, "probability": 0.98},
+   {"word": " teal.",  "start": 34.02, "end": 36.80, "probability": 0.99}
+  ]
+ }
+]
